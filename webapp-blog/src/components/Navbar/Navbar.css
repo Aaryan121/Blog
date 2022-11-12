@@ -1,5 +1,8 @@
 @import url('https://fonts.googleapis.com/css2?family=Varela&display=swap');
 
+
+
+
 .top{
     width: 100%;
     height: 50px;
@@ -9,6 +12,47 @@
     font-family: 'Varela', sans-serif;
 }
 
-.topleft,.topright{
-    flex:3;
+.topLeft,.topRight{
+    flex:2;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.topCenter{
+    flex:6;
+}
+
+.logo{
+    font-size: 20px;
+    margin: 10px;
+    color: #444;
+}
+
+.topImg{
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.navList{
+    display: flex;
+    justify-content: center;
+    list-style: none;
+
+}
+
+.navListItem{
+    margin-right: 20px;
+    font-style: 18px;
+    font-weight: 300;
+    cursor: pointer;
+}
+
+.topSearchIcon{
+    font-style: 18px;
+    color: #666;
+    cursor: pointer;
+    margin-left: 15px;
 }

@@ -4,13 +4,13 @@ import "./Navbar.css"
 const Navbar = () => {
   return (
     <div className='top'>
-        <div className="topleft">
+        <div className="topLeft">
             <div className="logo">
                 Bloggy
             </div>
         </div>
         <div className="topCenter">
-            <ul className="navlist">
+            <ul className="navList">
                 <li className="navListItem">HOME</li>
                 <li className="navListItem">ABOUT</li>
                 <li className="navListItem">CONTRACTS</li>
@@ -19,9 +19,10 @@ const Navbar = () => {
             </ul>
         </div>
         <div className="topRight">
-            <img src="Photo by mohamed abdelghaffar from Pexels: https://www.pexels.com/photo/man-in-black-jacket-771742/" alt="profile" />
-            <FontAwesomeIcon icon="fa-solid fa-magnifying-glass" />
-        </div>
+            
+            <img className='topImg' src="https://images.unsplash.com/photo-1529665253569-6d01c0eaf7b6?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1085&q=80" alt="profile" />
+            <i className="topSearchIcon fa-solid fa-magnifying-glass"></i>
+            </div>
     </div>
   )
 }
