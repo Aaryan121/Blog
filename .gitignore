@@ -3,7 +3,9 @@
 # dependencies
 /node_modules
 /api/node_modules
+/webapp-blog/node_modules
 /api/.env
+/webapp-blog/.env
 /.pnp
 .pnp.js
 

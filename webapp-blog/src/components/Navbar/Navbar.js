@@ -1,9 +1,14 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import { Link } from 'react-router-dom';
+import { Context } from '../../context/Context';
 import "./Navbar.css"
 
 const Navbar = () => {
-    const user = false;
+    const {user ,dispatch} = useContext(Context);
+
+    const handelLogout=()=>{
+        dispatch({type:"LOGOUT"});
+    }
   return (
     <div className='top'>
         <div className="topLeft">
@@ -25,13 +30,13 @@ const Navbar = () => {
                 <li className="navListItem">
                 <Link to="/write" className='link' >WRITE</Link>
                 </li>
-                <li className="navListItem">
+                <li className="navListItem" onClick={handelLogout}>
                     {user && "LOGOUT"}
                 </li>
             </ul>
         </div>
         <div className="topRight">
-            {user? (<img className='topImg' src="https://images.unsplash.com/photo-1529665253569-6d01c0eaf7b6?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1085&q=80" alt="profile" />
+            {user? (<img className='topImg' src={user.profilePic} alt="profile" />
                 )
                 :
                 (<ul className='navList'>
