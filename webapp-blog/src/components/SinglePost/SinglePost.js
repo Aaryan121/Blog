@@ -1,22 +1,50 @@
+import { useEffect ,useState } from "react";
+import { Link, useLocation } from "react-router-dom"
 import "./SinglePost.css"
+import axios from "axios";
 
 const SinglePost = () => {
+  const location = useLocation()
+  const path = location.pathname.split("/")[2];
+  const [posts ,setPosts] = useState({})
+
+  useEffect(()=>{
+    const getPost = async() =>{
+      const res = await axios.get("/posts/" + path)
+      setPosts(res.data)
+    }
+    getPost()
+  },[path])
+
+
   return (
     <div className="singlePost">
         <div className="singlePostWrapper">
-            <img src="https://plus.unsplash.com/premium_photo-1664910039021-a1bfcc6574b9?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=872&q=80" alt="" className="singlePostImg" />
+          {posts.photo && <img src={posts.photo} alt="" className="singlePostImg" />}
+            
             <h1 className="singlePostTitle">
-                Lorem ipsum dolor sit amet.
+                {posts.title}
                 <div className="singlePostEdit">
                 <i className="singlePostIcon fa-solid fa-pen-to-square"></i>
                 <i className="singlePostIcon fa-solid fa-trash"></i>
                 </div>
                 </h1>
                 <div className="singlePostInfo">
-                    <span className="singlePostAuthor">Author: <b>Name</b></span>
-                    <span className="singlePostDate">1 hour ago</span>
+                    <span className="singlePostAuthor">Author:
+                    <Link className="link" to={`/?user=${posts.username}`}>
+                    <b>{posts.username}</b>
+                    </Link>
+                    
+                     </span>
+                    <span className="singlePostDate">
+                      {
+                        new Date (posts.createdAt).toDateString()
+                      }
+                    </span>
                 </div>
-                <p className="singlePostDesc">Lorem ipsum dolor sit amet consectetur adipisicing elit. Dicta minus a repellat tempore, temporibus voluptates architecto numquam officiis voluptatibus culpa beatae, nesciunt deleniti ipsam ex aspernatur tenetur in voluptate saepe!</p>
+                <p className="singlePostDesc">
+                  {posts.desc}
+                </p>
             
         
         </div>
