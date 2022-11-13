@@ -36,7 +36,11 @@ const Navbar = () => {
             </ul>
         </div>
         <div className="topRight">
-            {user? (<img className='topImg' src={user.profilePic} alt="profile" />
+            {user? (
+            <Link to="/settings" className='link'>
+                <img className='topImg' src={user.profilePic} alt="profile" />
+            </Link>
+            
                 )
                 :
                 (<ul className='navList'>

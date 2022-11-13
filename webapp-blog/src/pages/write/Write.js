@@ -17,8 +17,8 @@ const Write = () => {
       desc
     };
     if(file){
-      const data = FormData();
-      const filename = Date.now() + file.name;
+      const data = new FormData();
+      const filename = Date.now()+file.name;
       data.append("name",filename);
       data.append("file",file);
       newPost.photo = filename;
@@ -28,12 +28,8 @@ const Write = () => {
     }
     try{
       const res = await axios.post("/posts",newPost);
-      window.location.replace("/post"+ res.data._id)
+      window.location.replace("/post/"+ res.data._id)
     }catch(err){}
-    try {
-      const res = await axios.post("/posts", newPost);
-      window.location.replace("/post/" + res.data._id);
-    } catch (err) {}
     
   };
   
