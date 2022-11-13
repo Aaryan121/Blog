@@ -11,3 +11,7 @@ img{
 *:focus{
     outline: none;
 }
+.link{
+    text-decoration: none;
+    color: inherit;
+}

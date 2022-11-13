@@ -2,7 +2,7 @@ import "./SinglePost.css"
 
 const SinglePost = () => {
   return (
-    <div classNameName="singlePost">
+    <div className="singlePost">
         <div className="singlePostWrapper">
             <img src="https://plus.unsplash.com/premium_photo-1664910039021-a1bfcc6574b9?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=872&q=80" alt="" className="singlePostImg" />
             <h1 className="singlePostTitle">
