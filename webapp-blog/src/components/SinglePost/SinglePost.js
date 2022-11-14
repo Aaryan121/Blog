@@ -17,7 +17,7 @@ const SinglePost = () => {
 
   useEffect(()=>{
     const getPost = async() =>{
-      const res = await axios.get("/posts/" + path)
+      const res = await axios.get("https://blog-app-aaryan.herokuapp.com/api/posts/" + path)
       setPosts(res.data);
       setTitle(res.data.title);
       setDesc(res.data.desc);
@@ -28,14 +28,14 @@ const SinglePost = () => {
 
   const handleDelete = async() =>{
     try{
-      await axios.delete(`/posts/${posts._id} `, {data:{username:user.username}});
+      await axios.delete(`https://blog-app-aaryan.herokuapp.com/api/posts/${posts._id} `, {data:{username:user.username}});
       window.location.replace("/");
 
     }catch(err){}
   }
   const handleUpdate = async () => {
     try {
-      await axios.put(`/posts/${posts._id}`, {
+      await axios.put(`https://blog-app-aaryan.herokuapp.com/api/posts/${posts._id}`, {
         username: user.username,
         title,
         desc,

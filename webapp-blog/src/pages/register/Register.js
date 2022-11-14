@@ -13,10 +13,10 @@ const Register = () => {
     e.preventDefault();
     setError(false)
     try{
-      const res = await  axios.post("/auth/register", {
+      const res = await  axios.post("https://blog-app-aaryan.herokuapp.com/api/auth/register", {
         username,email,password
       });
-      res.data && window.location.replace("/login");
+      res.data && window.location.replace("https://blog-app-aaryan.herokuapp.com/api/login");
       console.log(res);
     }catch(err){
       setError(true);

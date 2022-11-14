@@ -12,7 +12,7 @@ const Settings = () => {const [file, setFile] = useState(null);
     const [success, setSuccess] = useState(false);
   
     const { user, dispatch } = useContext(Context);
-    const PF = "http://localhost:8000/images/"
+    const PF = "https://blog-app-aaryan.herokuapp.com/images/"
   
     const handleSubmit = async (e) => {
       e.preventDefault();
