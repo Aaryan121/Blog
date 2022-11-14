@@ -8,7 +8,7 @@ const SinglePost = () => {
   const location = useLocation()
   const path = location.pathname.split("/")[2];
   const [posts ,setPosts] = useState({})
-  const PF = "http://localhost:8000/images/"
+  const PF = "https://blog-app-aaryan.herokuapp.com/images/"
   const {user} =useContext(Context);
   const [title, setTitle] = useState("");
   const [desc, setDesc] = useState("");

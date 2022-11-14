@@ -48,6 +48,7 @@ const Write = () => {
                   style={{ display: "none" }}
                   onChange={(e) => setFile(e.target.files[0])}
                 />
+                
                 <input type="text" placeholder="Title" className="writeInput" autoFocus={true} onChange={e=>setTitle(e.target.value)}/>
                 
             </div>
