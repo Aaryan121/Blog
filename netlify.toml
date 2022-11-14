@@ -2,3 +2,7 @@
     base="webapp-blog"
     CI = "npm run build"
     publish = "build"
+
+[[redirects]]
+    from ="/login"
+    to="/pages/login/login"
