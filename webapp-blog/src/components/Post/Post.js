@@ -1,5 +1,4 @@
 import { Link } from "react-router-dom"
-import Posts from "../Posts/Posts"
 import "./Post.css"
 
 const Post = ({post}) => {
