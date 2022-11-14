@@ -28,13 +28,12 @@ const Settings = () => {const [file, setFile] = useState(null);
         const filename = Date.now() + file.name;
         data.append("name", filename);
         data.append("file", file);
-        updatedUser.profilePic = filename;
         try {
-          await axios.post("/upload", data);
+          await axios.post("https://blog-app-aaryan.herokuapp.com/api/upload", data);
         } catch (err) {}
       }
       try {
-        const res = await axios.put("/users/" + user._id, updatedUser);
+        const res = await axios.put("https://blog-app-aaryan.herokuapp.com/api/users/" + user._id, updatedUser);
         setSuccess(true);
         dispatch({ type: "UPDATE_SUCCESS", payload: res.data });
       } catch (err) {
