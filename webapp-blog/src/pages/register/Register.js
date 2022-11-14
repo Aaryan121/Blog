@@ -16,7 +16,7 @@ const Register = () => {
       const res = await  axios.post("https://blog-app-aaryan.herokuapp.com/api/auth/register", {
         username,email,password
       });
-      res.data && window.location.replace("https://blog-app-aaryan.herokuapp.com/api/login");
+      res.data && window.location.replace("/login");
       console.log(res);
     }catch(err){
       setError(true);
