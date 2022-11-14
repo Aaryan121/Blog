@@ -1,0 +1,4 @@
+[build]
+    base="webapp-blog"
+    CI = "npm run build"
+    publish = "build"
