@@ -1,6 +1,9 @@
+@import url('https://fonts.googleapis.com/css2?family=Varela+Round&display=swap');
+
 .post{
     width: 385px;
     margin: 0px 25px 40px 25px;
+    font-family: 'Varela Round', sans-serif;
 }
 
 .postImg{
