@@ -12,7 +12,7 @@ const Sidebar = () => {
       setCats(res.data)
     }
     getCats();
-  })
+  },[])
 
   return (
     <div className="sidebar">
