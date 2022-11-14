@@ -1,5 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Varela&display=swap');
-
+@import url('https://fonts.googleapis.com/css2?family=Nunito&display=swap');
 
 
 
@@ -29,6 +29,8 @@
     font-size: 20px;
     margin: 10px;
     color: #444;
+    font-family: 'Nunito', sans-serif;
+
 }
 
 .topImg{
@@ -50,6 +52,10 @@
     font-style: 18px;
     font-weight: 300;
     cursor: pointer;
+}
+
+.navListItem:hover{
+    color: rgb(87, 85, 85);
 }
 
 .topSearchIcon{

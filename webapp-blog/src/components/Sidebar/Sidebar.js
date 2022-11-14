@@ -19,7 +19,7 @@ const Sidebar = () => {
         <div className="sidebarItem">
             <span className="sidebarTitle">About Me</span>
             <img src="https://images.pexels.com/photos/2253275/pexels-photo-2253275.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="" />
-            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Alias debitis id a.</p>
+            <p>Hello, Enjoy writing and posting your blogs. </p>
         </div>
 
         <div className="sidebarItem">
