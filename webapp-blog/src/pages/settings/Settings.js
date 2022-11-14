@@ -9,6 +9,7 @@ const Settings = () => {const [file, setFile] = useState(null);
     const [username, setUsername] = useState("");
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
+    const [profilePic , setProfilePic] = useState ("");
     const [success, setSuccess] = useState(false);
   
     const { user, dispatch } = useContext(Context);
@@ -22,6 +23,7 @@ const Settings = () => {const [file, setFile] = useState(null);
         username,
         email,
         password,
+        profilePic
       };
       if (file) {
         const data = new FormData();
@@ -38,7 +40,9 @@ const Settings = () => {const [file, setFile] = useState(null);
         dispatch({ type: "UPDATE_SUCCESS", payload: res.data });
       } catch (err) {
         dispatch({ type: "UPDATE_FAILURE" });
+        
       }
+      
     };
   return (
     <div className="settings">
@@ -51,7 +55,7 @@ const Settings = () => {const [file, setFile] = useState(null);
           <label>Profile Picture</label>
           <div className="settingsPP">
             <img
-              src={file ? URL.createObjectURL(file) : PF+user.profilePic}
+              src={file ? URL.createObjectURL(file) : user.profilePic}
               alt=""
             />
             <label htmlFor="fileInput">
@@ -80,6 +84,11 @@ const Settings = () => {const [file, setFile] = useState(null);
           <input
             type="password"
             onChange={(e) => setPassword(e.target.value)}
+          />
+          <label>Profile Picture Link</label>
+          <input
+            type="text"
+            onChange={(e) => setProfilePic(e.target.value)}
           />
           <button className="settingsSubmit" type="submit">
             Update
